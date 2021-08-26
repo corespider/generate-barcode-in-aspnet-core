@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form asp-action="Index" asp-controller="Home">
+        <input type="text" name="barcode" class="form-control" autocomplete="off" />
+        <input type="submit" value="Generate Barcode" class="btn btn-primary mt-3" />
+    </form>
+    <div class="mt-5">
+        @if (ViewBag.BarcodeImage != null)
+        {
+            <img src="@ViewBag.BarcodeImage" alt="" />
+        }
+    </div>
+</div>
